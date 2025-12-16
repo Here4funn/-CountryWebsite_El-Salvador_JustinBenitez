@@ -1,9 +1,11 @@
 nav{
   padding:5px
 }
+
 nav a{
+  
   color:black;
-  margin:0 10px 0 10px;
+  margin:0 35px 0 35px;
   display:inline-block;
   width:20%;
   text-align:center;
@@ -29,9 +31,36 @@ nav a:hover {
     transition: background-color 1s ease-out, transform 1s ease-out;
 
 }
+.quick {
+  text-align: center;
+  color: rgb(18, 0, 119);
+}
+.container{
+  display: flex;
+}
+
+.container div {
+  flex:1;
+  text-align: center;
+  background-color: #000000;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 20px;
+  
+}
+.container2 div {
+  flex:1;
+  text-align: center;
+  background-color: #000000;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 20px;
+}
+
 
 /* Challenge 10: Change the background color to blue and the text to white for elements with an class of "banner" */
 .banner {
+  font-family:'Times New Roman', Times, serif;
   font-size: 75px;
   text-align: center;
   text-shadow: black 6px 6px;
@@ -41,7 +70,7 @@ nav a:hover {
 /* Challenge 11: Make the font size bigger and the color of the text to blue for elements with a class of "main" */
 .main {
   font-size: large; /* You can also use pixel values like 20px, or relative values like 1.5em or 150% */
-  color: blue; /* You can also use a hex code like #0000ff */
+  color: rgb(255, 255, 255); /* You can also use a hex code like #0000ff */
 }
 
 
