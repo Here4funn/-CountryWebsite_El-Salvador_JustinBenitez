@@ -1,77 +1,333 @@
-nav{
-  padding:5px
-}
+/*(NOTICEEE INCASE IF NEEDED) all animations and hover effects were learned in lesson 2.5, including by some edpuzzles.*/
 
-nav a{
-  
-  color:black;
-  margin:0 35px 0 35px;
-  display:inline-block;
-  width:20%;
-  text-align:center;
-}
 
-/* Challenge 7: Make the font for all elements Arial */
-body{
+
+/* GENERAL */
+body {
+  margin: 0;
   font-family: Arial;
-
+  background-color: #f5f5f5;
 }
-/* Challenge 8: Remove the underline for all hyperlinks */
-a{
+
+/* NAVIGATION */
+nav {
+  background-color: white;
+  text-align: center;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav a {
+  margin: 0 20px;
+  color: black;
   text-decoration: none;
+  font-weight: bold;
+  padding: 5px 10px;
+  transition: all 0.3s ease;
 }
 
-/* Challenge 9: Change the bottom border of the hyperlinks in the <nav> element to 2px solid black when the visitor hovers over it */
 nav a:hover {
-    background-color: lightgray;
-    padding: 5px 10px;
-    border-radius: 5px;
-    background-color: rgb(255, 255, 255);
-    transform: scale(1.1);
-    transition: background-color 1s ease-out, transform 1s ease-out;
+  color: #0033cc;
+  border-bottom: 2px solid #0033cc;
+  transform: scale(1.1);
+}
 
-}
-.quick {
+/* HERO */
+.hero {
   text-align: center;
-  color: rgb(18, 0, 119);
+  padding: 60px 20px;
+  background-color: #0033cc;
+  color: white;
+  position: relative;
+  overflow: hidden;
 }
-.container{
+
+.hero h1 {
+  font-size: 60px;
+  margin-bottom: 10px;
+  animation: slideIn 1s ease-out;
+}
+
+.hero p {
+  font-size: 24px;
+  animation: fadeIn 2s ease-out;
+}
+
+/* IMAGE SECTION */
+.image-section {
   display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
+  flex-wrap: wrap;
 }
 
-.container div {
-  flex:1;
+.image-card {
+  background-color: white;
+  width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
   text-align: center;
-  background-color: #000000;
-  margin: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.image-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.image-card h2 {
+  padding: 15px;
+}
+
+.image-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.image-card:hover img {
+  transform: scale(1.05);
+}
+
+/* FACTS */
+.facts {
+  background-color: #ffffff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.facts h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #0033cc;
+}
+
+.fact-box {
+  background-color: #f0f0f0;
+  margin: 15px auto;
   padding: 20px;
-  border-radius: 20px;
-  
+  max-width: 600px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
-.container2 div {
-  flex:1;
+
+.fact-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.history-link {
+  margin-top: 25px;
+}
+
+.history-link a {
+  text-decoration: none;
+  color: #0033cc;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.history-link a:hover {
+  text-decoration: underline;
+  transform: scale(1.05);
+}
+
+/* ANIMATIONS */
+@keyframes slideIn {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .image-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-card {
+    width: 90%;
+  }
+}
+/* HISTORY PAGE */
+
+.history-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 20px;
+}
+
+.history-card {
+  background-color: white;
+  width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
   text-align: center;
-  background-color: #000000;
-  margin: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.history-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.history-card h2 {
+  padding: 10px 15px;
+  color: #0033cc;
+}
+
+.history-card p {
+  padding: 0 15px 15px 15px;
+}
+
+.history-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.history-card:hover img {
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .history-card {
+    width: 90%;
+  }
+}
+
+/* CUISINES PAGE */
+
+.cuisines-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 20px;
+}
+
+.cuisine-card {
+  background-color: white;
+  width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.cuisine-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.cuisine-card h2 {
+  padding: 10px 15px;
+  color: #0033cc;
+}
+
+.cuisine-card p {
+  padding: 0 15px 15px 15px;
+}
+
+.cuisine-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.cuisine-card:hover img {
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .cuisine-card {
+    width: 90%;
+  }
+}
+
+/* LANDMARKS PAGE */
+
+.landmarks-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 20px;
+}
+
+.landmark-card {
+  background-color: white;
+  width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.landmark-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.landmark-card h2 {
+  padding: 10px 15px;
+  color: #0033cc;
+}
+
+.landmark-card p {
+  padding: 0 15px 15px 15px;
+}
+
+.landmark-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.landmark-card:hover img {
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .landmark-card {
+    width: 90%;
+  }
+}
+/* FOOTER */
+.footer {
+  background-color: #0033cc; /* matches hero/nav color */
+  color: white;
+  text-align: center;
   padding: 20px;
-  border-radius: 20px;
+  margin-top: 40px;
 }
 
-
-/* Challenge 10: Change the background color to blue and the text to white for elements with an class of "banner" */
-.banner {
-  font-family:'Times New Roman', Times, serif;
-  font-size: 75px;
-  text-align: center;
-  text-shadow: black 6px 6px;
-  color: rgb(54, 67, 250);
+.footer a {
+  color: #ffffff;
+  text-decoration: underline;
+  transition: color 0.3s ease;
 }
 
-/* Challenge 11: Make the font size bigger and the color of the text to blue for elements with a class of "main" */
-.main {
-  font-size: large; /* You can also use pixel values like 20px, or relative values like 1.5em or 150% */
-  color: rgb(255, 255, 255); /* You can also use a hex code like #0000ff */
+.footer a:hover {
+  color: #ffcc00; /* subtle hover effect */
 }
-
-
-
